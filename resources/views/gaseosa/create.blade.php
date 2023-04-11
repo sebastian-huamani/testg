@@ -10,6 +10,9 @@
 <body>
     <x-nav />
 
+    <h2 class="text-center mt-6 font-semibold text-xl">Nueva Gaseosa </h2>
+
+
     <form action="{{ url('/producto') }}" class="flex flex-col items-center mt-8">
         @csrf
         <div  class="my-4">

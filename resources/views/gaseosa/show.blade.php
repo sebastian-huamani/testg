@@ -8,7 +8,9 @@
 <body>
     <x-nav />
     
-    <form action="{{ url('/producto') }}" class="flex flex-col items-center mt-8">
+    <h2 class="text-center mt-6 font-semibold text-xl">Editor de Producto </h2>
+
+    <form action="{{ url('/producto/edit/' . $gaseosa->id) }}" class="flex flex-col items-center mt-6" method="post">
         @csrf
         <div  class="my-4">
             <p> Nombre:</p>

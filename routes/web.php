@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\GaseosaController;
+use App\Http\Controllers\MarcaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,6 +22,13 @@ Route::get('/', function () {
 Route::get('/productos', [GaseosaController::class, 'index']);
 Route::get('/producto/crear', [GaseosaController::class, 'create']);
 Route::get('/producto', [GaseosaController::class, 'store']);
-Route::get('/producto/{gaseosa}/show', [GaseosaController::class, 'edit'])->name('gaseosa.show');
-Route::post('/producto/{gaseosa}/edit', [GaseosaController::class, 'update'])->name('gaseosa.show');
-Route::post('/producto/{gaseosa}', [GaseosaController::class, 'destroy']);
+Route::get('/producto/{id}/show', [GaseosaController::class, 'edit']);
+Route::post('/producto/edit/{id}', [GaseosaController::class, 'update']);
+Route::post('/producto/delete/{id}', [GaseosaController::class, 'destroy']);
+
+
+Route::get('/marcas', [MarcaController::class, 'index']);
+Route::get('/marca/crear', [MarcaController::class, 'create']);
+Route::get('/marca', [MarcaController::class, 'store']);
+Route::get('/marca/{id}/show', [MarcaController::class, 'edit']);
+Route::post('/marca/edit/{id}', [MarcaController::class, 'update']);
