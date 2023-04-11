@@ -7,9 +7,7 @@
 </head>
 <body>
     <x-nav />
-
-    
-
+    {{ $gaseosa }}
   </h1>
 </body>
 </html>

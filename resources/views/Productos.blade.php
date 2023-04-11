@@ -7,9 +7,13 @@
 </head>
 <body>
     <x-nav />
-
-    
-
+    <div class="">
+        @foreach ($gaseosas as $gaseosa)
+        <li>
+            <a href="{{route('gaseosa.show', $gaseosa)}}">{{$gaseosa->nombre}}</a>
+        </li>
+        @endforeach
+    </div>
   </h1>
 </body>
 </html>

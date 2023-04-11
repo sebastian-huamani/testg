@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GaseosaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/productos', [GaseosaController::class, 'index']);
+Route::get('/producto/crear', [GaseosaController::class, 'create']);
+Route::get('/producto', [GaseosaController::class, 'store']);
+Route::get('/producto/{gaseosa}/show', [GaseosaController::class, 'edit'])->name('gaseosa.show');
+Route::post('/producto/{gaseosa}/edit', [GaseosaController::class, 'update'])->name('gaseosa.show');
+Route::post('/producto/{gaseosa}', [GaseosaController::class, 'destroy']);

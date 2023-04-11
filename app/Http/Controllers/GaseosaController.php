@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\gaseosa;
+use App\Models\Gaseosa;
+use App\Models\Marca;
 use Illuminate\Http\Request;
 
 class GaseosaController extends Controller
@@ -12,7 +13,9 @@ class GaseosaController extends Controller
      */
     public function index()
     {
-        //
+        $gaseosas = Gaseosa::all();
+
+        return view('gaseosa.index', compact('gaseosas'));
     }
 
     /**
@@ -20,7 +23,8 @@ class GaseosaController extends Controller
      */
     public function create()
     {
-        //
+        $marcas = Marca::all();
+        return view('gaseosa.create', compact('marcas'));
     }
 
     /**
@@ -28,38 +32,47 @@ class GaseosaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $gaseosa = $request->except('_token');
+        Gaseosa::insert($gaseosa);
+        return redirect('/productos');
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(gaseosa $gaseosa)
+    public function show(int $id)
     {
-        //
+        return view('gaseosa.show', compact('id'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(gaseosa $gaseosa)
+    public function edit(int $id)
     {
-        //
+        $gaseosa = Gaseosa::findOrFail($id);
+        return view('gaseosa.show', compact('gaseosa'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, gaseosa $gaseosa)
+    public function update(Request $request, $id)
     {
-        //
+        $gaseosaDatos = $request->except('_token');
+        Gaseosa::where('id', $id)->update($gaseosaDatos);
+
+        $gaseosa = Gaseosa::findOrFail($id);
+        return view('gaseosa.show', compact('gaseosa'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(gaseosa $gaseosa)
+    public function destroy(int $id)
     {
-        //
+        Gaseosa::destroy($id);
+
+        return redirect('/productos');
     }
 }
