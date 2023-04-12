@@ -1,20 +1,9 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-  <title>Geincos Test</title>
-</head>
-<body>
-    <x-nav />
+@extends('layout.app')
 
-    <body>
-      @section('body')
-          
-      @endsection
-    </body>
+@section('body')
 
-  </h1>
-</body>
-</html>
+  <div class="h-96 w-full flex items-center justify-center">
+    <p class="font-semibold text-5xl" >Crud de gaseosas</p>
+  </div>
+
+@endsection
