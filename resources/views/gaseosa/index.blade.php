@@ -1,14 +1,6 @@
-<!doctype html>
-<html>
+@extends('layout.app')
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite('resources/css/app.css')
-</head>
-
-<body>
-    <x-nav />
+@section('body')
 
     <h2 class="text-center mt-6 font-semibold text-xl">Lista Gaseosas </h2>
 
@@ -41,9 +33,4 @@
             </tbody>
         </table>
     </div>
-
-
-    </h1>
-</body>
-
-</html>
+@endsection

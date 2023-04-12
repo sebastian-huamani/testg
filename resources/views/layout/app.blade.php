@@ -4,16 +4,17 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   @vite('resources/css/app.css')
+  <title>Geincos Test</title>
 </head>
 <body>
     <x-nav />
-    <div class="">
-        @foreach ($gaseosas as $gaseosa)
-        <li>
-            <a href="{{route('gaseosa.show', $gaseosa)}}">{{$gaseosa->nombre}}</a>
-        </li>
-        @endforeach
-    </div>
+
+    <body>
+      @section('body')
+      @show    
+      
+    </body>
+
   </h1>
 </body>
 </html>

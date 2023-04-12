@@ -1,12 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
-    <x-nav />
+@extends('layout.app')
+
+@section('body')
     
     <form action="{{ url('/marca/edit/' . $marca->id) }}" class="flex flex-col items-center mt-8" method="post">
         @csrf
@@ -20,5 +14,4 @@
     </form>
 
   </h1>
-</body>
-</html>
+  @endsection

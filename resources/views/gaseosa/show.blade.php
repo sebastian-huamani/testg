@@ -1,13 +1,6 @@
-<!doctype html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  @vite('resources/css/app.css')
-</head>
-<body>
-    <x-nav />
-    
+@extends('layout.app')
+
+@section('body')
     <h2 class="text-center mt-6 font-semibold text-xl">Editor de Producto </h2>
 
     <form action="{{ url('/producto/edit/' . $gaseosa->id) }}" class="flex flex-col items-center mt-6" method="post">
@@ -40,7 +33,5 @@
         
         <button type="submit" class="rounded bg-slate-800 px-4 py-2 text-white">enviar</button>
     </form>
-
-  </h1>
-</body>
-</html>
+    
+@endsection
